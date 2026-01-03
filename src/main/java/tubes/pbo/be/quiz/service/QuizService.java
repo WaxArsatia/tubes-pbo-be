@@ -45,7 +45,7 @@ public class QuizService {
             throw new ValidationException("Number of questions must be exactly 5, 10, or 15");
         }
         
-        // Check summary exists and user owns it : sprint
+        // Check summary exists and user owns it
         Summary summary = summaryRepository.findByIdAndUserId(request.getSummaryId(), userId)
                 .orElseThrow(() -> new ForbiddenException("You do not have access to this summary"));
         
